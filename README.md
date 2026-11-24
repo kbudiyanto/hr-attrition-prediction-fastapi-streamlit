@@ -30,3 +30,58 @@
 
 # Prerequisite (Prasyarat) Dan Installasi
 <p><span style="text-decoration: underline;"><strong>Struktur Folder</strong></span></p>
+<img width="768" height="143" alt="image" src="https://github.com/user-attachments/assets/9e9e74a5-0d57-4964-beec-2eb0906ac765" />
+<p></p>
+<h3><strong>2. Langkah-Langkah Instalasi</strong></h3>
+<h4><strong>Langkah 1: Masuk ke Folder Proyek &amp; Buat Virtual Environment</strong></h4>
+<p><span style="font-weight: 400;">Buka terminal di dalam folder proyek (misalnya </span><span style="font-weight: 400;">hr-attrition-app</span><span style="font-weight: 400;">), lalu buat </span><em><span style="font-weight: 400;">virtual environment</span></em><span style="font-weight: 400;">:</span></p>
+<p><span style="font-weight: 400;">Bash</span></p>
+<p><strong>python -m venv .venv</strong></p>
+<h4><strong>Langkah 2: Aktifkan Virtual Environment</strong></h4>
+<p><span style="font-weight: 400;">Aktifkan </span><strong>.venv</strong> <span style="font-weight: 400;">sesuai sistem operasi yang digunakan:</span></p>
+<p><strong><em>Windows (PowerShell)</em></strong><strong> :</strong></p>
+<p> </p>
+<p><strong>.venv\Scripts\Activate.ps1</strong></p>
+<p> </p>
+<p><strong><em>Linux / macOS</em></strong><strong> :</strong></p>
+<p><span style="font-weight: 400;">Bash</span></p>
+<p><strong>source .venv/bin/activate</strong></p>
+<p> </p>
+<p><span style="font-weight: 400;">Pastikan tanda </span><strong>(.venv)</strong><span style="font-weight: 400;"> muncul di awal baris terminal sebelum melanjutkan.</span></p>
+<h4><strong>Langkah 3: Upgrade pip &amp; Instal Seluruh Dependensi</strong></h4>
+<p><span style="font-weight: 400;">Instal semua paket yang dibutuhkan melalui </span><span style="font-weight: 400;">requirements.txt</span><span style="font-weight: 400;">:</span></p>
+<p><span style="font-weight: 400;">Bash</span></p>
+<p><strong>python -m pip install --upgrade pip</strong></p>
+<p><strong>pip install -r requirements.txt</strong></p>
+<p><span style="font-weight: 400;">Jika belum memiliki </span><span style="font-weight: 400;">requirements.txt</span><span style="font-weight: 400;">, Anda dapat menginstalnya langsung:</span></p>
+<p><span style="font-weight: 400;">Bash</span></p>
+<p><strong>pip install fastapi uvicorn pydantic scikit-learn joblib pandas numpy requests streamlit google-genai</strong></p>
+<h4><strong>Langkah 4: Verifikasi Dataset &amp; Konfigurasi Awal</strong></h4>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Pastikan berkas dataset CSV berada di folder proyek dan nama berkasnya (</span><strong>DATA_PATH</strong><span style="font-weight: 400;">) cocok dengan yang direferensikan di </span><strong>train.py</strong><span style="font-weight: 400;"> dan </span><strong>main.py</strong><span style="font-weight: 400;">.</span></li>
+<li style="font-weight: 400;"><em><span style="font-weight: 400;">(Opsional)</span></em><span style="font-weight: 400;"> Siapkan variabel lingkungan sebelum menjalankan aplikasi:</span></li>
+</ol>
+<p><strong><em>Windows (PowerShell)</em></strong><strong> :</strong></p>
+<p> </p>
+<p><strong>$env:API_KEY="dev-secret-key-123"</strong></p>
+<p><strong>$env:PREDICT_THRESHOLD="0.40"</strong></p>
+<p><strong>$env:GEMINI_API_KEY="AIza..."</strong></p>
+<p> </p>
+<p><strong><em>Linux / macOS</em></strong><strong> :</strong></p>
+<p><span style="font-weight: 400;">Bash</span></p>
+<p><strong>export API_KEY="dev-secret-key-123"</strong></p>
+<p><strong>export PREDICT_THRESHOLD="0.40"</strong></p>
+<p><strong>export GEMINI_API_KEY="AIza..."</strong></p>
+<p> </p>
+<h4><strong>Langkah 5: Latih Model Machine Learning</strong></h4>
+<p><span style="font-weight: 400;">Jalankan </span><strong>train.py</strong><span style="font-weight: 400;"> untuk melatih model </span><strong>RandomForestClassifier</strong><span style="font-weight: 400;"> (7 fitur input) dan menghasilkan berkas model </span><span style="font-weight: 400;">.</span><strong>joblib </strong><strong>:</strong></p>
+<p><span style="font-weight: 400;">Bash</span></p>
+<p><strong>python train.py</strong></p>
+<h4><strong>Langkah 6: Jalankan Backend FastAPI &amp; Frontend Streamlit</strong></h4>
+<p><strong>Terminal 1 (Backend FastAPI):</strong></p>
+<p><span style="font-weight: 400;">Bash</span></p>
+<p><strong>uvicorn main:app --reload</strong></p>
+<p> </p>
+<p><strong>Terminal 2 (Frontend Python Streamlit — dengan </strong><strong>.venv</strong><strong> aktif):</strong></p>
+<p><span style="font-weight: 400;">Bash</span></p>
+<p><strong>streamlit run frontend_app.py</strong></p>

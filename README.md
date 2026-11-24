@@ -5,15 +5,17 @@ Kaggle (https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition
 Sebelum melakukan prediksi data, data tersebut dilakukan tranning dengan nama modul train.py terlebih dahulu agar 
 tercipta file data model joblib.
 
-Struktur Folder
+# Struktur Folder
 
-hr-attrition-app/
-├── WA_Fn-UseC_-HR-Employee-Attrition.csv   # Dataset CSV karyawan (1.470 baris)
-├── train.py                                   # Pelatihan & evaluasi model ML (.joblib)
-├── database.py                                # Inisialisasi SQLite, masking API Key, & log prediksi
-├── schemas.py                                 # Skema validasi request & response (Pydantic)
-├── main.py                                    # Server FastAPI, auth X-API-Key, & dashboard HTML
-├── frontend_app.py                            # Frontend Python (Streamlit) + Gemini LLM
-└── README.md                                  # Dokumentasi penggunaan aplikasi
+<img width="717" height="150" alt="image" src="https://github.com/user-attachments/assets/b455eab4-7b13-41b2-83ad-1086c16373b0" />
 
+# Instalasi.
+<p><strong>Aktivkan Virtual Environment</strong></p>
+<p>Gunakan virtual environment agar paket project ini tidak bentrok dengan paket Python lain yang sudah terpasang di sistem kamu (mis. error command not found: streamlit atau ImportError pada scipy/sklearn biasanya disebabkan oleh instalasi global yang tercampur atau versi Python yang lama.</p>
+
+<p><span style="text-decoration: underline;"><em><strong>Bila ingin dijalankan pada laptop atau komputer PC anda, Pastikan anda sudah pada folder yang berisikan program python yang dimaksud</strong> </em></span></p>
+
+
+<p><strong>Windows (Command prompt/CMD PowerShell)</strong></p>
+<img width="665" height="64" alt="image" src="https://github.com/user-attachments/assets/646727bf-4d1c-4e7a-826d-4f16da1a8fb6" />
 

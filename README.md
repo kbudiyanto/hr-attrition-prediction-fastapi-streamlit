@@ -29,7 +29,8 @@
 </ol>
 
 # Prerequisite (Prasyarat) Dan Installasi
-<p><span style="text-decoration: underline;"><strong>1. Struktur Folder</strong></span></p>
+
+<h2><strong>1. Struktur Folder</strong></h2>
 <img width="768" height="143" alt="image" src="https://github.com/user-attachments/assets/9e9e74a5-0d57-4964-beec-2eb0906ac765" />
 <p></p>
 <h2><strong>2. Langkah-Langkah Instalasi</strong></h2>

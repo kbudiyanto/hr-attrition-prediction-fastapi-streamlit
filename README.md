@@ -29,10 +29,10 @@
 </ol>
 
 # Prerequisite (Prasyarat) Dan Installasi
-<p><span style="text-decoration: underline;"><strong>Struktur Folder</strong></span></p>
+<p><span style="text-decoration: underline;"><strong>1. Struktur Folder</strong></span></p>
 <img width="768" height="143" alt="image" src="https://github.com/user-attachments/assets/9e9e74a5-0d57-4964-beec-2eb0906ac765" />
 <p></p>
-<h3><strong>2. Langkah-Langkah Instalasi</strong></h3>
+<h2><strong>2. Langkah-Langkah Instalasi</strong></h2>
 <h4><strong>Langkah 1: Masuk ke Folder Proyek &amp; Buat Virtual Environment</strong></h4>
 <p><span style="font-weight: 400;">Buka terminal di dalam folder proyek (misalnya </span><span style="font-weight: 400;">hr-attrition-app</span><span style="font-weight: 400;">), lalu buat </span><em><span style="font-weight: 400;">virtual environment</span></em><span style="font-weight: 400;">:</span></p>
 

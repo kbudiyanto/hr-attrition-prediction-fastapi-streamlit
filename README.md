@@ -35,17 +35,23 @@
 <h3><strong>2. Langkah-Langkah Instalasi</strong></h3>
 <h4><strong>Langkah 1: Masuk ke Folder Proyek &amp; Buat Virtual Environment</strong></h4>
 <p><span style="font-weight: 400;">Buka terminal di dalam folder proyek (misalnya </span><span style="font-weight: 400;">hr-attrition-app</span><span style="font-weight: 400;">), lalu buat </span><em><span style="font-weight: 400;">virtual environment</span></em><span style="font-weight: 400;">:</span></p>
-<p><span style="font-weight: 400;">Bash</span></p>
-<p><strong>python -m venv .venv</strong></p>
+
+<img width="824" height="154" alt="image" src="https://github.com/user-attachments/assets/1878e660-0985-4ede-afe5-30f874bc1621" />
+
 <h4><strong>Langkah 2: Aktifkan Virtual Environment</strong></h4>
 <p><span style="font-weight: 400;">Aktifkan </span><strong>.venv</strong> <span style="font-weight: 400;">sesuai sistem operasi yang digunakan:</span></p>
 <p><strong><em>Windows (PowerShell)</em></strong><strong> :</strong></p>
 <p> </p>
-<p><strong>.venv\Scripts\Activate.ps1</strong></p>
+
+<img width="777" height="149" alt="image" src="https://github.com/user-attachments/assets/97dfd96b-895f-4dac-b4eb-7107ff326164" />
+
 <p> </p>
 <p><strong><em>Linux / macOS</em></strong><strong> :</strong></p>
 <p><span style="font-weight: 400;">Bash</span></p>
-<p><strong>source .venv/bin/activate</strong></p>
+
+<img width="774" height="147" alt="image" src="https://github.com/user-attachments/assets/98742dbe-4623-4c16-aee1-cd53dd412e55" />
+
+
 <p> </p>
 <p><span style="font-weight: 400;">Pastikan tanda </span><strong>(.venv)</strong><span style="font-weight: 400;"> muncul di awal baris terminal sebelum melanjutkan.</span></p>
 <h4><strong>Langkah 3: Upgrade pip &amp; Instal Seluruh Dependensi</strong></h4>

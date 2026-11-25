@@ -1,32 +1,31 @@
 # HR Attrition Prediction FastAPI Streamlit
 <p><strong>Aplikasi Prediksi Resign Karyawan &amp; Analytics Strategis HR</strong><span style="font-weight: 400;"> adalah solusi berbasis kecerdasan buatan (AI) dan Machine Learning yang dirancang untuk membantu Departemen Human Resources (HR) serta jajaran manajemen dalam mengidentifikasi risiko </span><em><span style="font-weight: 400;">attrition</span></em><span style="font-weight: 400;"> (pengunduran diri) karyawan secara dini.</span></p>
+<p><span style="font-weight: 400;">Pada mini projek ini menggunakan model algoritma Random Forest Clasfier dengan pertimbangan berdasarkan pada kesesuaian karakteristik algoritma tersebut dengan struktur data HR dan kebutuhan operasional aplikasi:</span></p>
+<ul>
+<li style="font-weight: 400;"><strong>Menangani Fitur Campuran (Numerik &amp; Kategorikal) dengan Baik</strong></li>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Fitur input pada proyek ini terdiri dari variabel numerik (</span><strong>Age</strong><strong>, </strong><strong>MonthlyIncome</strong><strong>, </strong><strong>YearsAtCompany</strong><strong>, </strong><strong>EnvironmentSatisfaction</strong><span style="font-weight: 400;">) dan kategorikal (</span><strong>OverTime</strong><strong>, </strong><strong>MaritalStatus</strong><strong>, </strong><strong>JobRole</strong><span style="font-weight: 400;">).</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Berbasis pohon keputusan (</span><em><span style="font-weight: 400;">decision trees</span></em><span style="font-weight: 400;">), Random Forest mudah menangkap batas pemisah (</span><em><span style="font-weight: 400;">split</span></em><span style="font-weight: 400;">) non-linear pada fitur-fitur tersebut tanpa mengasumsikan hubungan linear seperti pada regresi logistik.</span></li>
+</ul>
+<li style="font-weight: 400;"><strong>Robust terhadap Pola Non-Linear &amp; Interaksi Fitur</strong></li>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Risiko </span><em><span style="font-weight: 400;">resign</span></em><span style="font-weight: 400;"> karyawan umumnya muncul dari kombinasi beberapa faktor sekaligus (misalnya karyawan muda dengan </span><strong>YearsAtCompany</strong><span style="font-weight: 400;"> singkat, </span><strong>MonthlyIncome</strong><span style="font-weight: 400;"> rendah, dan </span><strong>OverTime = Yes</strong><span style="font-weight: 400;">), yang ditangkap secara alami melalui percabangan pada banyak pohon keputusan.</span></li>
+</ul>
+<li style="font-weight: 400;"><strong>Mengurangi Risiko </strong><strong><em>Overfitting</em></strong><strong> Dibandingkan Single Decision Tree</strong></li>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Dengan menggabungkan banyak pohon yang dilatih pada </span><em><span style="font-weight: 400;">bootstrap sample</span></em><span style="font-weight: 400;"> dan subset fitur acak (</span><em><span style="font-weight: 400;">bagging</span></em><span style="font-weight: 400;"> + </span><em><span style="font-weight: 400;">feature subsampling</span></em><span style="font-weight: 400;">), varians prediksi menjadi lebih stabil dibanding satu pohon keputusan tunggal.</span></li>
+</ul>
+<li style="font-weight: 400;"><strong>Mendukung Penanganan Ketidakseimbangan Kelas (</strong><strong>class_weight</strong><strong>)</strong></li>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Pada dataset HR, jumlah karyawan yang tidak </span><em><span style="font-weight: 400;">resign</span></em><span style="font-weight: 400;"> (</span><span style="font-weight: 400;">No</span><span style="font-weight: 400;">: 1.233) jauh lebih banyak dibanding yang </span><em><span style="font-weight: 400;">resign</span></em><span style="font-weight: 400;"> (</span><strong>Yes</strong><span style="font-weight: 400;">: 237). Random Forest mendukung </span><span style="font-weight: 400;">class_weight</span><span style="font-weight: 400;"> (seperti </span><span style="font-weight: 400;">balanced_subsample</span><span style="font-weight: 400;">) agar kelas minoritas (</span><span style="font-weight: 400;">Yes</span><span style="font-weight: 400;">) tetap terwakili saat pelatihan.</span></li>
+</ul>
+<li style="font-weight: 400;"><strong>Menghasilkan Probabilitas Terkalibrasi &amp; Kompatibel dengan Pipeline Scikit-Learn</strong></li>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Metode </span><span style="font-weight: 400;">predict_proba()</span><span style="font-weight: 400;"> memudahkan penghitungan skor probabilitas </span><em><span style="font-weight: 400;">resign</span></em><span style="font-weight: 400;"> serta pengaturan </span><em><span style="font-weight: 400;">threshold</span></em><span style="font-weight: 400;"> keputusan di API/dashboard sesuai sensitivitas yang dibutuhkan tim HR.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Mudah disatukan ke dalam </span><span style="font-weight: 400;">Pipeline</span><span style="font-weight: 400;"> scikit-learn bersama </span><span style="font-weight: 400;">ColumnTransformer</span><span style="font-weight: 400;"> (</span><span style="font-weight: 400;">SimpleImputer</span><span style="font-weight: 400;">, </span><span style="font-weight: 400;">StandardScaler</span><span style="font-weight: 400;">, </span><span style="font-weight: 400;">OneHotEncoder</span><span style="font-weight: 400;">) dan disimpan ke format </span><span style="font-weight: 400;">.joblib</span><span style="font-weight: 400;"> untuk inferensi cepat di FastAPI.</span></li>
+</ul>
+</ul>
 <p><span style="font-weight: 400;">Aplikasi ini mengintegrasikan pemodelan prediktif berbasis data internal perusahaan dengan kapabilitas Large Language Model (LLM) dari </span><strong>Google Gemini</strong><span style="font-weight: 400;">, sehingga tidak hanya menyajikan angka probabilitas resign, tetapi juga memberikan analisis naratif dan rekomendasi aksi retensi yang konkret, kontekstual, dan berorientasi strategis.</span></p>
-<h3><strong>Arsitektur &amp; Pilar Utama Sistem</strong></h3>
-<p><span style="font-weight: 400;">Sistem ini dibangun dengan arsitektur modular yang memisahkan peran </span><em><span style="font-weight: 400;">machine learning core</span></em><span style="font-weight: 400;">, </span><em><span style="font-weight: 400;">backend API</span></em><span style="font-weight: 400;">, </span><em><span style="font-weight: 400;">layanan persistence</span></em><span style="font-weight: 400;">, serta </span><em><span style="font-weight: 400;">frontend antarmuka pengembang dan pengambil keputusan</span></em><span style="font-weight: 400;">:</span></p>
-<ol>
-<li style="font-weight: 400;"><strong>Mesin Prediksi Machine Learning (Scikit-Learn)</strong></li>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Ditingkatkan menggunakan algoritma </span><strong>Random Forest Classifier</strong><span style="font-weight: 400;"> yang dilatih di atas dataset indikator HR (seperti </span><em><span style="font-weight: 400;">Age</span></em><span style="font-weight: 400;">, </span><em><span style="font-weight: 400;">JobRole</span></em><span style="font-weight: 400;">, </span><em><span style="font-weight: 400;">MaritalStatus</span></em><span style="font-weight: 400;">, </span><em><span style="font-weight: 400;">MonthlyIncome</span></em><span style="font-weight: 400;">, </span><em><span style="font-weight: 400;">YearsAtCompany</span></em><span style="font-weight: 400;">, </span><em><span style="font-weight: 400;">EnvironmentSatisfaction</span></em><span style="font-weight: 400;">, dan </span><em><span style="font-weight: 400;">OverTime</span></em><span style="font-weight: 400;">).</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Dilengkapi validasi silang (</span><em><span style="font-weight: 400;">5-Fold Stratified Cross-Validation</span></em><span style="font-weight: 400;">) untuk memastikan akurasi dan keandalan model saat menilai tingkat risiko karyawan.</span></li>
-</ul>
-<li style="font-weight: 400;"><strong>Backend Berkinerja Tinggi &amp; Keamanan (FastAPI &amp; SQLite)</strong></li>
-<ul>
-<li style="font-weight: 400;"><strong>FastAPI</strong><span style="font-weight: 400;"> bertindak sebagai fondasi REST API yang cepat, teringan, dan terstruktur untuk memproses permintaan prediksi secara </span><em><span style="font-weight: 400;">real-time</span></em><span style="font-weight: 400;">.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Keamanan akses dijamin melalui mekanisme otentikasi </span><strong>API Key (X-API-Key)</strong><span style="font-weight: 400;">.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Database </span><strong>SQLite</strong><span style="font-weight: 400;"> terintegrasi menyimpan seluruh riwayat transaksi prediksi dan secara otomatis menerapkan pengamanan </span><em><span style="font-weight: 400;">masking</span></em><span style="font-weight: 400;"> API Key untuk menjaga privasi data sensitif di lingkungan log.</span></li>
-</ul>
-<li style="font-weight: 400;"><strong>Antarmuka Pengguna Interaktif (Streamlit &amp; Dashboard HTML)</strong></li>
-<ul>
-<li style="font-weight: 400;"><strong>Dashboard HTML (Chart.js):</strong><span style="font-weight: 400;"> Menyajikan visualisasi real-time berbasis web untuk pemantauan cepat riwayat prediksi dan KPI karyawan.</span></li>
-<li style="font-weight: 400;"><strong>Frontend Streamlit (Python):</strong><span style="font-weight: 400;"> Menyediakan formulir input interaktif 7 parameter, visualisasi grafik distribusi per posisi (</span><em><span style="font-weight: 400;">JobRole</span></em><span style="font-weight: 400;">), tabel matriks komparatif antara data historis dan hasil prediksi, serta alat pengujian koneksi sistem.</span></li>
-</ul>
-<li style="font-weight: 400;"><strong>Kecerdasan Buatan Generatif (Gemini LLM Integration)</strong></li>
-<ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Menggunakan SDK resmi google-genai (</span><em><span style="font-weight: 400;">Gemini 2.5 Flash</span></em><span style="font-weight: 400;"> dan </span><em><span style="font-weight: 400;">Gemini 2.5 Pro</span></em><span style="font-weight: 400;">) untuk menerjemahkan angka-angka prediksi menjadi narasi saran HR.</span></li>
-<li style="font-weight: 400;"><strong>Analisis Individu:</strong><span style="font-weight: 400;"> Menghasilkan rekomendasi retensi spesifik untuk karyawan tertentu berdasarkan profil risiko individualnya.</span></li>
-<li style="font-weight: 400;"><strong>Analisis Strategis Lintas Posisi:</strong><span style="font-weight: 400;"> Menganalisis matriks risiko secara agregat untuk mengidentifikasi divisi/posisi yang paling rawan </span><em><span style="font-weight: 400;">turnover</span></em><span style="font-weight: 400;"> serta memberikan panduan kebijakan retensi berskala organisasi.</span></li>
-</ul>
-</ol>
 
 # Prerequisite (Prasyarat) Dan Installasi
 
@@ -57,12 +56,15 @@
 <p><span style="font-weight: 400;">Pastikan tanda </span><strong>(.venv)</strong><span style="font-weight: 400;"> muncul di awal baris terminal sebelum melanjutkan.</span></p>
 <h4><strong>Langkah 3: Upgrade pip &amp; Instal Seluruh Dependensi</strong></h4>
 <p><span style="font-weight: 400;">Instal semua paket yang dibutuhkan melalui </span><span style="font-weight: 400;">requirements.txt</span><span style="font-weight: 400;">:</span></p>
-<p><span style="font-weight: 400;">Bash</span></p>
-<p><strong>python -m pip install --upgrade pip</strong></p>
-<p><strong>pip install -r requirements.txt</strong></p>
+
+<img width="803" height="170" alt="image" src="https://github.com/user-attachments/assets/5e64aa48-b098-49c5-9ef4-7861edf86e6a" />
+
+
 <p><span style="font-weight: 400;">Jika belum memiliki </span><span style="font-weight: 400;">requirements.txt</span><span style="font-weight: 400;">, Anda dapat menginstalnya langsung:</span></p>
-<p><span style="font-weight: 400;">Bash</span></p>
-<p><strong>pip install fastapi uvicorn pydantic scikit-learn joblib pandas numpy requests streamlit google-genai</strong></p>
+
+<img width="815" height="172" alt="image" src="https://github.com/user-attachments/assets/4b9810cb-6225-451f-8124-c6e9835b1554" />
+
+
 <h4><strong>Langkah 4: Verifikasi Dataset &amp; Konfigurasi Awal</strong></h4>
 <ol>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Pastikan berkas dataset CSV berada di folder proyek dan nama berkasnya (</span><strong>DATA_PATH</strong><span style="font-weight: 400;">) cocok dengan yang direferensikan di </span><strong>train.py</strong><span style="font-weight: 400;"> dan </span><strong>main.py</strong><span style="font-weight: 400;">.</span></li>

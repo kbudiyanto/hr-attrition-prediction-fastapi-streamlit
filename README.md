@@ -80,7 +80,6 @@
 <p><strong><em>Linux / macOS</em></strong><strong> :</strong></p>
 <img width="736" height="197" alt="image" src="https://github.com/user-attachments/assets/1c8a8ec3-0b0b-4ac3-b07f-0bc82a98dc73" />
 
-
 <p> </p>
 <h4><strong>Langkah 5: Latih Model Machine Learning</strong></h4>
 <p><span style="font-weight: 400;">Jalankan </span><strong>train.py</strong><span style="font-weight: 400;"> untuk melatih model </span><strong>RandomForestClassifier</strong><span style="font-weight: 400;"> (7 fitur input) dan menghasilkan berkas model </span><span style="font-weight: 400;">.</span><strong>joblib </strong><strong>:</strong></p>
@@ -89,9 +88,16 @@
 <h4><strong>Langkah 6: Jalankan Backend FastAPI &amp; Frontend Streamlit</strong></h4>
 <p><strong>Terminal 1 (Backend FastAPI):</strong></p>
 <img width="789" height="157" alt="image" src="https://github.com/user-attachments/assets/53280b2a-7448-47b3-af60-a4887d715a06" />
+<p> </p>
+<img width="773" height="311" alt="image" src="https://github.com/user-attachments/assets/7c67f80d-9aea-40da-994c-1f276842b994" />
 
 <p> </p>
 <p><strong>Terminal 2 (Frontend Python Streamlit — dengan </strong><strong>.venv</strong><strong> aktif):</strong></p>
-
+<p></p>
 <img width="810" height="165" alt="image" src="https://github.com/user-attachments/assets/bd7607f0-f995-4d86-94fd-d58ddcdead4f" />
+<p> </p>
+<img width="570" height="331" alt="image" src="https://github.com/user-attachments/assets/7d2cec2c-db5f-4d71-bdfe-03b4fdba773d" />
 
+<p></p>
+<p></p>
+<p>Setelah Terminal 1 dan Terminal 2 berjalan dengan baik maka selanjutnya adalah membuka aplikasi browser untuk mengakses aplikasi tersebut</p>

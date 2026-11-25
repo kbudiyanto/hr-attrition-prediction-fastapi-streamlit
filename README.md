@@ -101,11 +101,13 @@
 <p></p>
 <p></p>
 <p>Setelah Terminal 1 dan Terminal 2 berjalan dengan baik maka selanjutnya adalah membuka aplikasi browser untuk mengakses aplikasi tersebut</p>
-
+<p></p>
 <h4><strong>Langkah 7 : Mengakses FastAPI</strong></h4>
-<p><span style="font-weight: 400;"><br /></span><strong>Base URL API ==&gt; </strong><strong>http://127.0.0.1:8000</strong></p>
-<p><strong>Dokumentasi Interaktif (Swagger) ==&gt; </strong><strong>http://127.0.0.1:8000/docs</strong></p>
-<p><strong>Dashboard HTML/</strong><a href="http://chart.js"><strong>Chart.js</strong></a><strong> ==&gt; </strong><strong>http://127.0.0.1:8000/dashboard</strong></p>
+<ol style="list-style-type: upper-alpha;">
+<li><strong><span style="font-weight: 400;">Base URL API ==&gt; </span><span style="font-weight: 400;">http://127.0.0.1:8000</span></strong></li>
+<li><span style="font-weight: 400;">Dokumentasi Interaktif (Swagger) ==&gt; </span><span style="font-weight: 400;">http://127.0.0.1:8000/docs</span></li>
+<li><span style="font-weight: 400;">Dashboard HTML/Chart.js ==&gt; </span><span style="font-weight: 400;">http://127.0.0.1:8000/dashboard</span></li>
+</ol>
 <p> </p>
 <h4><strong>Langkah 8 : Menjalankan Frontend Python (Streamlit)</strong></h4>
 

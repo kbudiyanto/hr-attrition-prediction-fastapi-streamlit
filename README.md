@@ -101,3 +101,37 @@
 <p></p>
 <p></p>
 <p>Setelah Terminal 1 dan Terminal 2 berjalan dengan baik maka selanjutnya adalah membuka aplikasi browser untuk mengakses aplikasi tersebut</p>
+
+<h4><strong>Langkah 7 : Mengakses FastAPI</strong></h4>
+<p><span style="font-weight: 400;"><br /></span><strong>Base URL API ==&gt; </strong><strong>http://127.0.0.1:8000</strong></p>
+<p><strong>Dokumentasi Interaktif (Swagger) ==&gt; </strong><strong>http://127.0.0.1:8000/docs</strong></p>
+<p><strong>Dashboard HTML/</strong><a href="http://chart.js"><strong>Chart.js</strong></a><strong> ==&gt; </strong><strong>http://127.0.0.1:8000/dashboard</strong></p>
+<p> </p>
+<h4><strong>Langkah 8 : Menjalankan Frontend Python (Streamlit)</strong></h4>
+
+<p><strong> A. Konfigurasi</strong></p>
+
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Isi </span><strong>Base URL FastAPI</strong><span style="font-weight: 400;"> dengan </span><a href="http://127.0.0.1:8000"><span style="font-weight: 400;">http://127.0.0.1:8000</span></a></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Isi </span><strong>X-API-Key</strong><span style="font-weight: 400;"> (default: </span><span style="font-weight: 400;">dev-secret-key-123</span><span style="font-weight: 400;">)</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Atur </span><strong>Threshold Prediksi Resign</strong><span style="font-weight: 400;"> (default: </span><span style="font-weight: 400;">0.40</span><span style="font-weight: 400;">).</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Isi </span><strong>Gemini API Key</strong><span style="font-weight: 400;"> (wajib untuk fitur analisa LLM) </span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;"> pilih model Gemini ( gemini-3.5-flash,</span><span style="font-weight: 400;">gemini-2.5-flash</span><span style="font-weight: 400;"> atau </span><span style="font-weight: 400;">gemini-2.5-pro</span><span style="font-weight: 400;">).</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Klik </span><strong>Test Koneksi Gemini</strong><span style="font-weight: 400;"> untuk memverifikasi key dan mengecek status koneksi/error sebelum melakukan prediksi.</span></li>
+</ol>
+<h4><strong>B. Prediksi Resign &amp; Analisa Gemini</strong></h4>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Isi 7 parameter input:</span></li>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">OverTime</span><span style="font-weight: 400;"> (</span><span style="font-weight: 400;">Yes</span><span style="font-weight: 400;"> / </span><span style="font-weight: 400;">No</span><span style="font-weight: 400;">)</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">MonthlyIncome</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Age</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">MaritalStatus</span><span style="font-weight: 400;"> (</span><span style="font-weight: 400;">Single</span><span style="font-weight: 400;"> / </span><span style="font-weight: 400;">Married</span><span style="font-weight: 400;"> / </span><span style="font-weight: 400;">Divorced</span><span style="font-weight: 400;">)</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">YearsAtCompany</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">EnvironmentSatisfaction</span><span style="font-weight: 400;"> (</span><span style="font-weight: 400;">1</span><span style="font-weight: 400;">–</span><span style="font-weight: 400;">4</span><span style="font-weight: 400;">)</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">JobRole</span></li>
+</ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Isi </span><strong>Ref Karyawan</strong><span style="font-weight: 400;"> (opsional) lalu klik </span><strong>Prediksi &amp; Analisa Gemini</strong><span style="font-weight: 400;">.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Sistem menampilkan hasil prediksi (</span><span style="font-weight: 400;">Yes</span><span style="font-weight: 400;">/</span><span style="font-weight: 400;">No</span><span style="font-weight: 400;">), probabilitas </span><em><span style="font-weight: 400;">resign</span></em><span style="font-weight: 400;">, </span><span style="font-weight: 400;">Record ID</span><span style="font-weight: 400;"> tersimpan di SQLite, </span><em><span style="font-weight: 400;">masked API Key</span></em><span style="font-weight: 400;">, serta ringkasan faktor risiko dan rekomendasi retensi dari Gemini.</span></li>
+</ol>
+ 

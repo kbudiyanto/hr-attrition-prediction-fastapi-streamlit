@@ -72,25 +72,26 @@
 </ol>
 <p><strong><em>Windows (PowerShell)</em></strong><strong> :</strong></p>
 <p> </p>
-<p><strong>$env:API_KEY="dev-secret-key-123"</strong></p>
-<p><strong>$env:PREDICT_THRESHOLD="0.40"</strong></p>
-<p><strong>$env:GEMINI_API_KEY="AIza..."</strong></p>
+
+<img width="740" height="204" alt="image" src="https://github.com/user-attachments/assets/c7ee3781-b1e1-4a10-913a-fed2bef4af08" />
+
+
 <p> </p>
 <p><strong><em>Linux / macOS</em></strong><strong> :</strong></p>
-<p><span style="font-weight: 400;">Bash</span></p>
-<p><strong>export API_KEY="dev-secret-key-123"</strong></p>
-<p><strong>export PREDICT_THRESHOLD="0.40"</strong></p>
-<p><strong>export GEMINI_API_KEY="AIza..."</strong></p>
+<img width="736" height="197" alt="image" src="https://github.com/user-attachments/assets/1c8a8ec3-0b0b-4ac3-b07f-0bc82a98dc73" />
+
+
 <p> </p>
 <h4><strong>Langkah 5: Latih Model Machine Learning</strong></h4>
 <p><span style="font-weight: 400;">Jalankan </span><strong>train.py</strong><span style="font-weight: 400;"> untuk melatih model </span><strong>RandomForestClassifier</strong><span style="font-weight: 400;"> (7 fitur input) dan menghasilkan berkas model </span><span style="font-weight: 400;">.</span><strong>joblib </strong><strong>:</strong></p>
-<p><span style="font-weight: 400;">Bash</span></p>
-<p><strong>python train.py</strong></p>
+<img width="815" height="166" alt="image" src="https://github.com/user-attachments/assets/25b7a068-1091-4ae7-b566-524d1b0a38be" />
+
 <h4><strong>Langkah 6: Jalankan Backend FastAPI &amp; Frontend Streamlit</strong></h4>
 <p><strong>Terminal 1 (Backend FastAPI):</strong></p>
-<p><span style="font-weight: 400;">Bash</span></p>
-<p><strong>uvicorn main:app --reload</strong></p>
+<img width="789" height="157" alt="image" src="https://github.com/user-attachments/assets/53280b2a-7448-47b3-af60-a4887d715a06" />
+
 <p> </p>
 <p><strong>Terminal 2 (Frontend Python Streamlit — dengan </strong><strong>.venv</strong><strong> aktif):</strong></p>
-<p><span style="font-weight: 400;">Bash</span></p>
-<p><strong>streamlit run frontend_app.py</strong></p>
+
+<img width="810" height="165" alt="image" src="https://github.com/user-attachments/assets/bd7607f0-f995-4d86-94fd-d58ddcdead4f" />
+
